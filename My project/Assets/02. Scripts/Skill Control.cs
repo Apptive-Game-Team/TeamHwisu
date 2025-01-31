@@ -4,21 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Runtime.CompilerServices;
-public class SkillControl : MonoBehaviour
+public class SkillUI : MonoBehaviour
 {
     public GameObject[] hideSkillButtons;
     public GameObject[] textPros;
     public TextMeshProUGUI[] hideSkillTimeTexts; // 쿨타임 시간 표시
     public Image[] hideSkillImages;
-    private bool[] isHideSkills = {false, false, false, false};
-    private float[] coolTimes = {3, 6, 9, 12};
-    private float[] getSkillTimes = {0, 0, 0, 0}; // 스킬의 남은 쿨타임임
+    private bool[] isHideSkills = {false, false, false};
+    private float[] coolTimes = {3, 6, 9};
+    private float[] getSkillTimes = {0, 0, 0}; // 스킬의 남은 쿨타임임
 
+    private SkillSpawner skillSpawner;
 
-    public GameObject[] weaponPrefabs;
-    public Transform spawnPoint;
     void Start()
     {
+        skillSpawner = FindObjectOfType<SkillSpawner>();
+
         for(int i = 0; i < textPros.Length; i++)
         {
             hideSkillTimeTexts[i] = textPros[i].GetComponent<TextMeshProUGUI>();
@@ -31,14 +32,21 @@ public class SkillControl : MonoBehaviour
         HideSkillChk();
     }
 
-    public void HideSkillSetting(int skillNum) // 스킬 버튼 클릭 시
+    
+    public void OnSkillButtonClicked(int skillNum) // 버튼 클릭 시 발동되는 함수
     {
+        // 스킬 발동 관련
+        if(skillSpawner != null)
+        {
+            skillSpawner.UseSkill((SkillType)skillNum);
+        }
+
+        // 버튼 쿨타임 UI 관련
         hideSkillButtons[skillNum].SetActive(true); // 버튼 비활성화
         getSkillTimes[skillNum] = coolTimes[skillNum]; // 쿨타임 시간 반영
         isHideSkills[skillNum] = true; // 스킬 사용 상태 나타내는 bool 변수 저장
-
-    //    SpawnWeapon(skillNum); // 스킬 사용
     }
+
 
     private void HideSkillChk()
     {
@@ -56,11 +64,6 @@ public class SkillControl : MonoBehaviour
         if(isHideSkills[2])
         {
             StartCoroutine(SkillTimeChk(2));
-        }
-
-        if(isHideSkills[3])
-        {
-            StartCoroutine(SkillTimeChk(3));
         }
     }
 
