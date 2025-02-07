@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopManager : MonoBehaviour
 {
@@ -16,8 +17,13 @@ public class ShopManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void ToShop()
     {
-        
+        SceneManager.LoadScene("Wonje");
+    }
+
+    public void ToGame()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
