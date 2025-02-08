@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class ObstacleMoving : MonoBehaviour
+public class CrawlingObstacleMoving : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    private float destroyTime = 6f;
+    private float moveSpeed = 8f;
+    private float destroyTime = 4f;
 
     void Start()
     {
