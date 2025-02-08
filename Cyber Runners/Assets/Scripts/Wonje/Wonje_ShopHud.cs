@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopHud : MonoBehaviour
+
+public class Wonje_ShopHud : MonoBehaviour
 {
     public enum InfoType {curCoin, curDamage}
     public InfoType type;
@@ -19,11 +20,13 @@ public class ShopHud : MonoBehaviour
     {
         switch (type) {
             case InfoType.curCoin:
-                myText.text = string.Format("{0:F0}", ShopManager.instance.curCoin);
+                myText.text = string.Format("{0:F0}", Wonje_DataManager.instance.curCoin);
                 break;
             case InfoType.curDamage:
-                myText.text = string.Format("{0:F0}", ShopManager.instance.curDamage);
+                myText.text = string.Format("{0:F0}", Wonje_DataManager.instance.curDamage);
                 break;    
         }
     }
+
+    
 }

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopUpgrade: MonoBehaviour
+public class Wonje_ShopUpgrade: MonoBehaviour
 {
     int costDamage = 100; // 데미지업그레이드 비용
     int increaseDamage = 10; // 데미지증가량
@@ -32,9 +32,9 @@ public class ShopUpgrade: MonoBehaviour
     {
         switch (type) {
             case InfoType.Damage:
-                if (ShopManager.instance.curCoin >= costDamage) {
-                    ShopManager.instance.curCoin -= costDamage;
-                    ShopManager.instance.curDamage += increaseDamage;
+                if (Wonje_DataManager.instance.curCoin >= costDamage) {
+                    Wonje_DataManager.instance.curCoin -= costDamage;
+                    Wonje_DataManager.instance.curDamage += increaseDamage;
                 }
                 break;
         }
