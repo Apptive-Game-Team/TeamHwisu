@@ -9,7 +9,7 @@ public class WeaponDrop : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            WeaponSpawner.instance.ShowWeaponUI();
+            WeaponUI.instance.ShowWeaponUI();
             Debug.Log("무기 선택 UI창 활성화");
         }
     }
