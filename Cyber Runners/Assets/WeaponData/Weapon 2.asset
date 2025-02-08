@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf26c52b99268d46a15b542dbacea8a, type: 3}
+  m_Name: Weapon 2
+  m_EditorClassIdentifier: 
+  weaponName: 
+  weaponPrefab: {fileID: 3490505520603772441, guid: 538c5a5b8aa93734c9baa332fa05a9b0, type: 3}
+  damage: 20
+  cool: 12
+  weaponSpeed: 7
+  animationName: 
+  icon: {fileID: -487915847, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
