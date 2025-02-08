@@ -28,11 +28,16 @@ public class ObstacleSpawn : MonoBehaviour
     Vector3 crawlingPosition = new Vector3(13f, -2.2f, 0);
 
     int randomValue;
-    private float obstacleInterval = 3.5f; // 장애물 생성 간격
+    private float obstacleInterval = 3.5f; // 패턴 발동 간격
 
-    private void Start()
+    private Coroutine spawnCoroutine;
+
+    public void StartGame()
     {
-        StartCoroutine(SpawnObstacles());
+        if (spawnCoroutine == null)
+        {
+            spawnCoroutine = StartCoroutine(SpawnObstacles());
+        }
     }
 
     private IEnumerator SpawnObstacles()
