@@ -1336,8 +1336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curCoin: 9999
-  curDamage: 9999
-  maxHealth: 9999
+  maxHealth: 0
+  curDamage: 0
 --- !u!1 &1179515541
 GameObject:
   m_ObjectHideFlags: 0
