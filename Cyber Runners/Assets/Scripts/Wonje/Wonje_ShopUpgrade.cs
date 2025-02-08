@@ -4,12 +4,9 @@ using UnityEngine.UI;
 
 public class Wonje_ShopUpgrade: MonoBehaviour
 {
-    int costDamage = 100; // 데미지업그레이드 비용
-    int increaseDamage = 10; // 데미지증가량
-    int costHealth = 100; // 체력업그레이드 비용
-    int increaseHealth = 10; // 체력증가량량
-
-    public enum InfoType {Damage, Health}
+    
+    
+    public enum InfoType {Health, Damage}
     public InfoType type;
     Text[] myText;
 
@@ -21,9 +18,13 @@ public class Wonje_ShopUpgrade: MonoBehaviour
     void LateUpdate()
     {
         switch (type) {
+            case InfoType.Health:
+                myText[0].text = string.Format("health + {0:F0}", Wonje_ShopManager.instance.increaseHealth);
+                myText[1].text = string.Format("{0:F0}", Wonje_ShopManager.instance.costHealth);
+                break;  
             case InfoType.Damage:
-                myText[0].text = string.Format("damage + {0:F0}", increaseDamage);
-                myText[1].text = string.Format("damage + {0:F0}", costDamage);
+                myText[0].text = string.Format("damage + {0:F0}", Wonje_ShopManager.instance.increaseDamage);
+                myText[1].text = string.Format("{0:F0}", Wonje_ShopManager.instance.costDamage);
                 break;   
         }
     }
@@ -31,10 +32,16 @@ public class Wonje_ShopUpgrade: MonoBehaviour
     public void OnClick()
     {
         switch (type) {
+            case InfoType.Health:
+                if (Wonje_DataManager.instance.curCoin >= Wonje_ShopManager.instance.costHealth) {
+                    Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costHealth;
+                    Wonje_DataManager.instance.maxHealth += Wonje_ShopManager.instance.increaseHealth;
+                }
+                break;
             case InfoType.Damage:
-                if (Wonje_DataManager.instance.curCoin >= costDamage) {
-                    Wonje_DataManager.instance.curCoin -= costDamage;
-                    Wonje_DataManager.instance.curDamage += increaseDamage;
+                if (Wonje_DataManager.instance.curCoin >= Wonje_ShopManager.instance.costDamage) {
+                    Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costDamage;
+                    Wonje_DataManager.instance.curDamage += Wonje_ShopManager.instance.increaseDamage;
                 }
                 break;
         }
