@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponItem : MonoBehaviour
+public class WeaponDrop : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {

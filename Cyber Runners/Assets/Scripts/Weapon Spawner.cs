@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class WeaponSpawner : MonoBehaviour
 {
     public static WeaponSpawner instance;
+
+    public List<WeaponData> availableWeapons;
     public GameObject weaponUI;
     public Button[] optionButton;
     public Image[] weaponSlots;
