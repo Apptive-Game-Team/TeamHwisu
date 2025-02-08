@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Wonje_Main.unity
+    guid: bc6e52fa1681975438a54c29d9134526
+  - enabled: 1
+    path: Assets/Scenes/Wonje_Shop.unity
+    guid: fcf9742ef21face4d83879eae0975e69
   m_configObjects: {}
