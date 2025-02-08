@@ -30,14 +30,9 @@ public class ObstacleSpawn : MonoBehaviour
     int randomValue;
     private float obstacleInterval = 3.5f; // 패턴 발동 간격
 
-    private Coroutine spawnCoroutine;
-
-    public void StartGame()
+    private void Start()
     {
-        if (spawnCoroutine == null)
-        {
-            spawnCoroutine = StartCoroutine(SpawnObstacles());
-        }
+        StartCoroutine(SpawnObstacles());
     }
 
     private IEnumerator SpawnObstacles()
