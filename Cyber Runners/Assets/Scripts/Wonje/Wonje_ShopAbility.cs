@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Wonje_ShopHud : MonoBehaviour
+public class Wonje_ShopAbility : MonoBehaviour
 {
     public enum InfoType { curCoin, maxHealth, curDamage }
     public InfoType type;
