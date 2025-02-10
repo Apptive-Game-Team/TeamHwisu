@@ -19,6 +19,7 @@ public class Wonje_ShopCharacter : MonoBehaviour
     void Start() 
     {
         StartCoroutine(LockCheck());
+        
     }
 
     public void NextCharacter()

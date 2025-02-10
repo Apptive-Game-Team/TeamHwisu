@@ -13,8 +13,8 @@ public class Wonje_ShopManager : MonoBehaviour
     public int costDamage = 100; // 데미지업그레이드 비용
     public int increaseDamage = 10; // 데미지증가량
     public int characterNum = 0; // 보여지는 캐릭터의 넘버
-
-    int[] ResetParty = new int[2] {0, 1};
+    
+    int[] ResetParty = new int[2] {0, 1}; // 파티의 캐릭터를 초기화화
     
     void Awake()
     {
