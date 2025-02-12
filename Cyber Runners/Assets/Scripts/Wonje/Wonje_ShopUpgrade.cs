@@ -70,14 +70,14 @@ public class Wonje_ShopUpgrade: MonoBehaviour
         {
             int upgradeLevel = Wonje_DataManager.instance.characterUpgradeStatus[Wonje_ShopManager.instance.characterNum];
             
-            for (int i = 0; i < upgradeStatus.Length-1; i++)
+            for (int i = 1; i < upgradeStatus.Length; i++)
             {
-                upgradeStatus[i+1].sprite = upgradeBarSprite[0]; 
+                upgradeStatus[i].sprite = upgradeBarSprite[0]; 
             }
 
-            for (int i = 0; i < upgradeLevel; i++)
+            for (int i = 1; i < upgradeLevel + 1 && i < upgradeStatus.Length; i++)
             {
-                upgradeStatus[i+1].sprite = upgradeBarSprite[1]; 
+                upgradeStatus[i].sprite = upgradeBarSprite[1]; 
             }
 
             yield return new WaitForSeconds(0); 
