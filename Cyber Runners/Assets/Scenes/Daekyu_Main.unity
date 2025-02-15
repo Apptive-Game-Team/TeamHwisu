@@ -1218,11 +1218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da35af6a47eee304e8d8720698dd1580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallObstacle: {fileID: 8417101526333729585, guid: f51988448b546014c9d932211c09e13c, type: 3}
-  largeObstacle: {fileID: 7092932073179725307, guid: 6ce7053e6e1d2894f874f2acad0cd70f, type: 3}
-  bossAttack: {fileID: 1597445640255831891, guid: 460faf0c33b7862419691e3d141703ae, type: 3}
-  largeFallingObstacle: {fileID: 7385960593051877207, guid: 1e55e237c78740741b830f96b343f0c6, type: 3}
-  crawlingObstacle: {fileID: 1418695898809156994, guid: 7d9cfb5b04e705341925bf97d627426e, type: 3}
+  smallObstacle: {fileID: 1728364710485961632, guid: f51988448b546014c9d932211c09e13c, type: 3}
+  largeObstacle: {fileID: 7609271977227823352, guid: b123b8475927e5940afc5c0bf9fbb797, type: 3}
+  bossAttack: {fileID: 6775291996485196165, guid: 460faf0c33b7862419691e3d141703ae, type: 3}
+  largeFallingObstacle: {fileID: 4770226276043927837, guid: 1722c26660a5a654b97c99dc54b360bd, type: 3}
+  crawlingObstacle: {fileID: 6390010883059318706, guid: 6105e1579373ba546a3b1dd9821ed0ce, type: 3}
 --- !u!1 &842423277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,7 +1975,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

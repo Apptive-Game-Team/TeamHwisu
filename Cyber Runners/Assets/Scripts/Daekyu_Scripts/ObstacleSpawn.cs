@@ -10,25 +10,25 @@ public class ObstacleSpawn : MonoBehaviour
     [SerializeField] GameObject largeFallingObstacle;
     [SerializeField] GameObject crawlingObstacle;
 
-    Vector3 smallPosition1 = new Vector3(10f, -2.1f, 0);
-    Vector3 smallPosition2 = new Vector3(15f, -2.1f, 0);
-    Vector3 smallPosition3 = new Vector3(20f, -2.1f, 0);
+    Vector3 smallPosition1 = new Vector3(10f, -2.27f, 0);
+    Vector3 smallPosition2 = new Vector3(15f, -2.27f, 0);
+    Vector3 smallPosition3 = new Vector3(20f, -2.27f, 0);
 
-    Vector3 largePosition1 = new Vector3(10f, -1.4f, 0);
-    Vector3 largePosition2 = new Vector3(15f, -1.4f, 0);
-    Vector3 largePosition3 = new Vector3(20f, -1.4f, 0);
+    Vector3 largePosition1 = new Vector3(1.1f, 0.6f, 0);
+    Vector3 largePosition2 = new Vector3(6.1f, 0.6f, 0);
+    Vector3 largePosition3 = new Vector3(11.1f, 0.6f, 0);
 
     Vector3 attackPosition = new Vector3(8.4f, 4.5f, 0);
-    Quaternion attackRotation = Quaternion.Euler(0, 0, 31f);
+    Quaternion attackRotation = Quaternion.Euler(0, 0, 121f);
 
-    Vector3 largeFallingPosition1 = new Vector3(10f, 2f, 0);
-    Vector3 largeFallingPosition2 = new Vector3(15f, 2f, 0);
-    Vector3 largeFallingPosition3 = new Vector3(20f, 2f, 0);
+    Vector3 largeFallingPosition1 = new Vector3(9.7f, 1.2f, 0);
+    Vector3 largeFallingPosition2 = new Vector3(14.7f, 1.2f, 0);
+    Vector3 largeFallingPosition3 = new Vector3(19.7f, 1.2f, 0);
 
-    Vector3 crawlingPosition = new Vector3(13f, -2.2f, 0);
+    Vector3 crawlingPosition = new Vector3(11.67f, -2.2f, 0);
 
     int randomValue;
-    private float obstacleInterval = 3.5f; // 패턴 발동 간격
+    private float obstacleInterval = 2f; // 패턴 발동 간격
 
     private void Start()
     {

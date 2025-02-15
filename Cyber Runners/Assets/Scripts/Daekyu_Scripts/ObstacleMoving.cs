@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ObstacleMoving : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    private float destroyTime = 6f;
+    private float moveSpeed = 8f;
+    private float destroyTime = 10f;
 
     void Start()
     {
