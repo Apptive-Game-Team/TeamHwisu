@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf26c52b99268d46a15b542dbacea8a, type: 3}
   m_Name: Weapon 1
   m_EditorClassIdentifier: 
-  weaponName: 
-  weaponPrefab: {fileID: 338756967331168237, guid: f807e3cf490f7c349b01c2256337fe7f, type: 3}
+  weaponName: "\uD68C\uC624\uB9AC"
+  price: 200
+  icon: {fileID: -977646190, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
   damage: 10
   cool: 6
+  weaponPrefab: {fileID: 338756967331168237, guid: f807e3cf490f7c349b01c2256337fe7f, type: 3}
   weaponSpeed: 10
-  animationName: 
-  icon: {fileID: 1733008427, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}

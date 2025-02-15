@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WeaponButton : MonoBehaviour
 {
-    public WeaponData weapon;
+    public Dohyeong_WeaponData weapon;
     public Player player;
     public Image imgIcon;
     public Image imgCool;
