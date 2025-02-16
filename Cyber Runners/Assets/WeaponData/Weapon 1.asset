@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Weapon 1
   m_EditorClassIdentifier: 
   weaponName: "\uD68C\uC624\uB9AC"
-  price: 200
-  icon: {fileID: -977646190, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
-  damage: 10
-  cool: 6
-  weaponPrefab: {fileID: 338756967331168237, guid: f807e3cf490f7c349b01c2256337fe7f, type: 3}
+  weaponPrice: 20
+  weaponIcon: {fileID: -977646190, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
+  weaponDamage: 10
+  weaponCool: 6
   weaponSpeed: 10
+  weaponPrefab: {fileID: 338756967331168237, guid: f807e3cf490f7c349b01c2256337fe7f, type: 3}

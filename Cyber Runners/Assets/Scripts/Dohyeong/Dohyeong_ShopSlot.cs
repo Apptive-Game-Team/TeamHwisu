@@ -1,41 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Dohyeong_ShopSlot : MonoBehaviour
 {
     // 스크립트 역할
-    // 1. 구매 버튼 활성화 -> ShopManager.Purchase() 작동
-    // 2. 슬롯에 아이템 데이터 나열
-    public Image iconImage;
-    public Text weaponNameText;
-    public Text priceText;
+    // 1. Weapon Slot 상 UI 업데이트
+    public Image weaponIcon;
+    public Text weaponName;
+    public Text weaponPrice;
+    public Text weaponDamage;
+    public Text weaponCool;
     public Button buyButton;
 
-    private Dohyeong_WeaponData currentWeapon; // WeaponData : 스크립터블 오브젝트로 담은 Weapon 아이템 정보들
-    private Dohyeong_ShopManager shopManager;
+    private Dohyeong_WeaponData weaponData; // 무기 데이터
+    private Dohyeong_WeaponInfo weaponInfo; // Info 창 UI 업데이트트
     
-    public void SetSlot(Dohyeong_WeaponData weapon, Dohyeong_ShopManager manager)
+    public void Setup(Dohyeong_WeaponData data, Dohyeong_WeaponInfo info)
     {
-        currentWeapon = weapon;
-        shopManager = manager;
+        // 페이지 당 슬롯 4개 UI 업데이트
 
-
-        // UI 업데이트
         // 1. 무기 아이콘 2. 무기 이름 3. 무기 가격
-        iconImage.sprite = weapon.icon;
-        weaponNameText.text = weapon.weaponName;
-        priceText.text = weapon.price.ToString();
+        // 4. 무기 데미지 5. 무기 쿨타임
 
+        weaponData = data;
+        weaponInfo = info;
+
+        weaponIcon.sprite= weaponData.weaponIcon;
+        weaponName.text = weaponData.weaponName;
+        weaponPrice.text = weaponData.weaponPrice.ToString();
+        weaponDamage.text = $"데미지: {weaponData.weaponDamage}"; 
+        weaponCool.text = $"쿨타임: {weaponData.weaponCool}초"; 
+
+
+        // 클릭 시 Info UI 업데이트 버튼 이벤트트 -> 인스펙터로
     }
 
-    void BuyItem()
+    void SelectWeapon()
     {
-        if (shopManager != null) // || Shop 매니저에 연결된 재화가 돈보다 많고 )
+        if (weaponInfo != null)
         {
-            shopManager.PurchaseItem(currentWeapon);
+            weaponInfo.UpdateInfo(weaponData);
         }
+    }
+
+    void BuyWeapon()
+    {
+        if (Dohyeong_ShopData.Instance.SpendDia(weaponData.weaponPrice))
+        {
+            
+            Dohyeong_WeaponManager.Instance.EquipWeapon(weaponData); // 구매 시 재화 바로 적용
+        } 
 
     }
 }

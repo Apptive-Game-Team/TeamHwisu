@@ -11,6 +11,7 @@ public class Dohyeong_ShopManager : MonoBehaviour
     public Transform slotContainer;
     public Button prevButton;
     public Button nextButton;
+    public Dohyeong_WeaponInfo weaponInfo;
 
     [SerializeField]
     private List<Dohyeong_WeaponData> allWeapons;
@@ -19,22 +20,6 @@ public class Dohyeong_ShopManager : MonoBehaviour
     private int curPage = 0;
     private int totalPages => Mathf.CeilToInt((float)allWeapons.Count / itemsPerPage);
 
-    void Start()
-    {
-
-        if (allWeapons == null)
-            allWeapons = new List<Dohyeong_WeaponData>();
-
-        Debug.Log("아이템 갯수: " + allWeapons.Count);  // 아이템 갯수를 확인
-    
-    
-        // 모든 아이템 리스트 로드
-        // 초기화 후 배열로 인덱스 부여
-    
-    
-        UpdatePage();
-
-    }
 
     void UpdatePage()
     {
@@ -45,15 +30,22 @@ public class Dohyeong_ShopManager : MonoBehaviour
         int endIndex = Mathf.Min(startIndex + itemsPerPage, allWeapons.Count);
 
 
-        // 페이지 내 업데이트 (0~4)
-        for (int i = startIndex; i < itemsPerPage; i++)
+        // 페이지 내 업데이트
+        for (int i = startIndex; i < endIndex; i++)
         {
-            int weaponIndex = startIndex + i;
-
             GameObject slot = Instantiate(slotPrefab, slotContainer.transform);
 
             Dohyeong_ShopSlot shopSlot = slot.GetComponent<Dohyeong_ShopSlot>();
-            shopSlot.SetSlot(allWeapons[weaponIndex], this);
+            
+            // 스크립터블 오브젝트에서 데이터 가져오기
+            if (allWeapons[i] != null)
+            {
+                shopSlot.Setup(allWeapons[i], weaponInfo);  // 스크립터블 오브젝트를 전달하여 UI 업데이트
+            }
+            else
+            {
+                Debug.LogError("Weapon data at index " + i + " is null!");
+            }
         }
 
     }
@@ -89,10 +81,10 @@ public class Dohyeong_ShopManager : MonoBehaviour
     {
         int playerGold = 1000; // test
 
-        if (playerGold >= weapon.price)
+        if (playerGold >= weapon.weaponPrice)
         {
             Debug.Log(weapon.weaponName + "구매 완료");
-            playerGold -= weapon.price;
+            playerGold -= weapon.weaponPrice;
         }
         else {
             Debug.Log("재화가 부족합니다");

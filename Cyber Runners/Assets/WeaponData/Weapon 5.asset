@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dcf26c52b99268d46a15b542dbacea8a, type: 3}
-  m_Name: Weapon 3
+  m_Name: Weapon 5
   m_EditorClassIdentifier: 
-  weaponName: "\uBB34\uAE304"
-  weaponPrice: 40
-  weaponIcon: {fileID: -1367336437, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
-  weaponDamage: 12
-  weaponCool: 9
-  weaponSpeed: 10
+  weaponName: "\uBB34\uAE306"
+  weaponPrice: 60
+  weaponIcon: {fileID: -621237877, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
+  weaponDamage: 20
+  weaponCool: 15
+  weaponSpeed: 5
   weaponPrefab: {fileID: 3490505520603772441, guid: 538c5a5b8aa93734c9baa332fa05a9b0, type: 3}
