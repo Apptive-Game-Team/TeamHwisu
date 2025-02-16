@@ -7,8 +7,8 @@ public class Wonje_ShopCharacter : MonoBehaviour
     public RuntimeAnimatorController[] animCon;
     private Animator anim;
     private RectTransform[] rectTransform; // 잠금 이미지의 RectTransform
-
-    public bool characterLock = false; // 캐릭터 잠금 여부
+    private Coroutine lockCheckCoroutine; // 현재 실행 중인 코루틴을 저장할 변수
+    private bool characterLock = false; // 캐릭터 잠금 여부
 
     void Awake()
     {
@@ -18,8 +18,18 @@ public class Wonje_ShopCharacter : MonoBehaviour
 
     void Start() 
     {
-        StartCoroutine(LockCheck());
-        
+        if (lockCheckCoroutine == null) {
+            lockCheckCoroutine = StartCoroutine(LockCheck());
+        }
+    }
+
+    void OnEnable()
+    {
+        if (lockCheckCoroutine != null) {
+            StopCoroutine(lockCheckCoroutine);
+        }
+
+        lockCheckCoroutine = StartCoroutine(LockCheck()); 
     }
 
     public void NextCharacter()
@@ -52,7 +62,7 @@ public class Wonje_ShopCharacter : MonoBehaviour
                 anim.speed = characterLock ? 0 : 1;
             }
 
-            yield return new WaitForSeconds(0); 
+            yield return new WaitForSeconds(0f); 
         }
     }
 

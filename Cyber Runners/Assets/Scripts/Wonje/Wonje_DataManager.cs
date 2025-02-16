@@ -13,7 +13,7 @@ public class Wonje_DataManager : MonoBehaviour
     public int backgroundNum = 3; // 배경 이미지
 
     public int[] partyCharacterNum = new int[2] {0, 1}; // 파티로 데려갈 캐릭터의 넘버, 기본으로 캐릭터 0번과 1번이 선택되어있다
-    public int[] characterUpgradeStatus = new int[3];
+    public int[] characterUpgradeStatus = new int[3]; // 캐릭터별 강화 수치
     
     void Awake()
     {
