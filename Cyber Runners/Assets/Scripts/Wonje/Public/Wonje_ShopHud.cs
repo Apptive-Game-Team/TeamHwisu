@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Wonje_ShopHud : MonoBehaviour
 {
     public enum InfoType { Menu, Character, Ability, Weapon, Setting, Coin}
@@ -12,12 +13,15 @@ public class Wonje_ShopHud : MonoBehaviour
     private Vector2 hidePosition; // 숨겨진 위치
     private float duration = 0.2f; // 애니메이션 지속 시간
     private Coroutine moveCoroutine;
+    
+
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
 
     private void Start()
     {
-
-        rectTransform = GetComponent<RectTransform>();
-
         switch (type) {
             case InfoType.Menu:
                 hidePosition = new Vector2(800f, rectTransform.anchoredPosition.y);

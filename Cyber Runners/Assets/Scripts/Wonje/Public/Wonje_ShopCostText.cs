@@ -8,11 +8,15 @@ public class Wonje_ShopCostText: MonoBehaviour
 {
     public enum InfoType {SkillCost, HealthCost, DamageCost}
     public InfoType type;
-    Text myText;
+
+    private Text myText;
+    private RectTransform parentRect;
+    private Coroutine activeCheckCoroutine;
 
     void Awake()
     {
         myText = GetComponent<Text>();
+        parentRect = gameObject.transform.parent.GetComponent<RectTransform>();
     }
 
     void Start()
@@ -30,7 +34,35 @@ public class Wonje_ShopCostText: MonoBehaviour
         }
     }
 
-    
+    void OnEnable()
+    {
+        switch (type) {
+            case InfoType.SkillCost:
+                if (activeCheckCoroutine != null) 
+                {
+                    StopCoroutine(activeCheckCoroutine);
+                }
 
+                activeCheckCoroutine = StartCoroutine(ActiveCheck());
+            break;
+        } 
+    }
+
+    IEnumerator ActiveCheck()
+    {
+        while (gameObject.activeInHierarchy) {      
+            int charNum = Wonje_ShopManager.instance.characterNum;
+            int upgradeStatus = Wonje_DataManager.instance.characterUpgradeStatus[charNum];
+            int maxSkillLevel = Wonje_ShopManager.instance.maxSkillLevel;
+
+            if (upgradeStatus == maxSkillLevel) {
+                parentRect.localScale = Vector3.zero;
+            }
+            else {
+                parentRect.localScale = Vector3.one;
+            }
     
+            yield return new WaitForSeconds(0);  
+        }
+    }
 }

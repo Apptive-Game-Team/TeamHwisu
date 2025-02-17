@@ -51,7 +51,7 @@ public class Wonje_ShopCharacter : MonoBehaviour
 
     IEnumerator LockCheck()
     {
-        while (true) {
+        while (gameObject.activeInHierarchy) {
             bool isLocked = (Wonje_DataManager.instance.partyCharacterNum[0] == Wonje_ShopManager.instance.characterNum || 
                              Wonje_DataManager.instance.partyCharacterNum[1] == Wonje_ShopManager.instance.characterNum);
 
@@ -62,7 +62,7 @@ public class Wonje_ShopCharacter : MonoBehaviour
                 anim.speed = characterLock ? 0 : 1;
             }
 
-            yield return new WaitForSeconds(0f); 
+            yield return new WaitForSeconds(0); 
         }
     }
 

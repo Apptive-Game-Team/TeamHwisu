@@ -14,12 +14,20 @@ public class Wonje_ShopSetting : MonoBehaviour
 
     void Start()
     {
-        SetBackground();
-    }
-    
-    void SetBackground()
-    {
-        anim.runtimeAnimatorController = animCon[Wonje_DataManager.instance.backgroundNum];
+        switch (Wonje_DataManager.instance.backgroundNum) {
+            case 0:
+                SetMorning();
+                break;
+            case 1:
+                SetLunch();
+                break;
+            case 2:
+                SetEvening();
+                break;
+            case 3:
+                SetNight();
+                break;            
+        }
     }
 
     public void SetMorning()
@@ -48,5 +56,10 @@ public class Wonje_ShopSetting : MonoBehaviour
         Wonje_DataManager.instance.backgroundNum = 3;
         transform.localScale = new Vector3(3.7f, 1.8f, 1f);
         SetBackground();
+    }
+
+    void SetBackground()
+    {
+        anim.runtimeAnimatorController = animCon[Wonje_DataManager.instance.backgroundNum];
     }
 }

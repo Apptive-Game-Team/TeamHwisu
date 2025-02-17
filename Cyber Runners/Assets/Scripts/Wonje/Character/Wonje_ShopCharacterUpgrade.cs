@@ -25,14 +25,11 @@ public class Wonje_ShopCharacterUpgrade : MonoBehaviour
 
     public void CharacterUpgrade()
     {
-        if (Wonje_DataManager.instance.curCoin >= Wonje_ShopManager.instance.costSkill && Wonje_DataManager.instance.characterUpgradeStatus[Wonje_ShopManager.instance.characterNum] != Wonje_ShopManager.instance.maxSkillLevel) {
+        if (Wonje_DataManager.instance.curCoin >= Wonje_ShopManager.instance.costSkill && Wonje_DataManager.instance.characterUpgradeStatus[Wonje_ShopManager.instance.characterNum] < Wonje_ShopManager.instance.maxSkillLevel) {
             Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costSkill;
             Wonje_DataManager.instance.characterUpgradeStatus[Wonje_ShopManager.instance.characterNum]++;
             UpdateUpgradeBar(); 
-        } 
-        else if (Wonje_DataManager.instance.characterUpgradeStatus[Wonje_ShopManager.instance.characterNum] == Wonje_ShopManager.instance.maxSkillLevel) {
-
-        }   
+        }  
     }
 
     public void ResetUpgrade()
