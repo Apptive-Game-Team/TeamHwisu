@@ -7,7 +7,7 @@ public class Dohyeong_ShopData : MonoBehaviour
 {   
     // 스크립트 역할 : 재화 관리
     public static Dohyeong_ShopData Instance;
-    public int dia = 1000; // test 초기 재화
+    public int dia = 100; // test 초기 재화
 
 
     void Awake()

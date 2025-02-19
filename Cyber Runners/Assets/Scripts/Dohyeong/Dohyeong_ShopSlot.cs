@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Dohyeong_ShopSlot : MonoBehaviour
@@ -13,7 +12,6 @@ public class Dohyeong_ShopSlot : MonoBehaviour
     public Text weaponPrice;
     public Text weaponDamage;
     public Text weaponCool;
-    public Button buyButton;
 
     private Dohyeong_WeaponData weaponData; // 무기 데이터
     private Dohyeong_WeaponInfo weaponInfo; // Info 창 UI 업데이트트
@@ -38,7 +36,7 @@ public class Dohyeong_ShopSlot : MonoBehaviour
         // 클릭 시 Info UI 업데이트 버튼 이벤트트 -> 인스펙터로
     }
 
-    void SelectWeapon()
+    public void SelectWeapon()
     {
         if (weaponInfo != null)
         {
@@ -46,13 +44,4 @@ public class Dohyeong_ShopSlot : MonoBehaviour
         }
     }
 
-    void BuyWeapon()
-    {
-        if (Dohyeong_ShopData.Instance.SpendDia(weaponData.weaponPrice))
-        {
-            
-            Dohyeong_WeaponManager.Instance.EquipWeapon(weaponData); // 구매 시 재화 바로 적용
-        } 
-
-    }
 }

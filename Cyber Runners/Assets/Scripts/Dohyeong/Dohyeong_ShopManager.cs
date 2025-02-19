@@ -15,16 +15,30 @@ public class Dohyeong_ShopManager : MonoBehaviour
 
     [SerializeField]
     private List<Dohyeong_WeaponData> allWeapons;
-    private int itemsPerPage = 4; // 한 페이지 당 4 슬롯롯
+    private int itemsPerPage = 4; // 한 페이지 당 4 슬롯
 
     private int curPage = 0;
     private int totalPages => Mathf.CeilToInt((float)allWeapons.Count / itemsPerPage);
 
+    void Start()
+    {
+
+    if (slotPrefab == null)
+        Debug.LogError("🚨 slotPrefab이 null입니다! Inspector에서 확인하세요!");
+
+    if (slotContainer == null)
+        Debug.LogError("🚨 slotContainer가 null입니다! Inspector에서 확인하세요!");
+
+        UpdatePage();
+    }
 
     void UpdatePage()
     {
         // 로드 전 초기화화
         ClearSlots();
+
+        prevButton.interactable = curPage > 0;
+        nextButton.interactable = curPage < totalPages -1;
         
         int startIndex = curPage * itemsPerPage;
         int endIndex = Mathf.Min(startIndex + itemsPerPage, allWeapons.Count);
@@ -44,7 +58,7 @@ public class Dohyeong_ShopManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Weapon data at index " + i + " is null!");
+                Debug.LogError($" allWeapons[{i}]가 null입니다!");
             }
         }
 
@@ -77,18 +91,5 @@ public class Dohyeong_ShopManager : MonoBehaviour
         }
     }
     
-    public void PurchaseItem(Dohyeong_WeaponData weapon)
-    {
-        int playerGold = 1000; // test
-
-        if (playerGold >= weapon.weaponPrice)
-        {
-            Debug.Log(weapon.weaponName + "구매 완료");
-            playerGold -= weapon.weaponPrice;
-        }
-        else {
-            Debug.Log("재화가 부족합니다");
-        }
-    }
 
 }
