@@ -67,7 +67,16 @@ public class Dohyeong_WeaponManager : MonoBehaviour
             {
                 Destroy(currentWeaponObject);
                 currentWeaponObject = Instantiate(weapon.weaponPrefab, weaponHolder);
+            
+                SaveEquippedWeapon(weapon); // 장착 무기 저장장
+            
             }
         }
+    }
+
+    private void SaveEquippedWeapon(Dohyeong_WeaponData weapon)
+    {
+        PlayerPrefs.SetString("EquippedWeapon",weapon.weaponName);
+        PlayerPrefs.Save();
     }
 }
