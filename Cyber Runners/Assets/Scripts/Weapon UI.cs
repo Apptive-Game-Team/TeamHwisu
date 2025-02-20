@@ -35,7 +35,7 @@ public class WeaponUI : MonoBehaviour
     }
 
     // 선택 시 Weapon Button UI에 하나씩 추가되게게
-    void SelectWeapon(WeaponData weapon)
+    void SelectWeapon(Dohyeong_WeaponData weapon)
     {
         // WeaponManager.UpdateSlots(weapon);
         HideWeaponUI();
