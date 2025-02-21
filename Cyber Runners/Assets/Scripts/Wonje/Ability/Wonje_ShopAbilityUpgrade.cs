@@ -1,31 +1,29 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Wonje_ShopUpgrade: MonoBehaviour
+public class Wonje_ShopAbilityUpgrade : MonoBehaviour
 {
-    
-    
     public enum InfoType {Health, Damage}
     public InfoType type;
-    Text[] myText;
+
+    Text myText;
 
     void Awake()
     {
-        myText = GetComponentsInChildren<Text>();
+        myText = GetComponent<Text>();
     }
 
-    void LateUpdate()
+    void Start()
     {
-        switch (type) {
+        switch (type) { 
             case InfoType.Health:
-                myText[0].text = string.Format("health + {0:F0}", Wonje_ShopManager.instance.increaseHealth);
-                myText[1].text = string.Format("{0:F0}", Wonje_ShopManager.instance.costHealth);
+                myText.text = string.Format("health + {0:F0}", Wonje_ShopManager.instance.increaseHealth);
                 break;  
             case InfoType.Damage:
-                myText[0].text = string.Format("damage + {0:F0}", Wonje_ShopManager.instance.increaseDamage);
-                myText[1].text = string.Format("{0:F0}", Wonje_ShopManager.instance.costDamage);
-                break;   
+                myText.text = string.Format("Damage + {0:F0}", Wonje_ShopManager.instance.increaseDamage);
+                break;           
         }
     }
 
@@ -35,7 +33,7 @@ public class Wonje_ShopUpgrade: MonoBehaviour
             case InfoType.Health:
                 if (Wonje_DataManager.instance.curCoin >= Wonje_ShopManager.instance.costHealth) {
                     Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costHealth;
-                    Wonje_DataManager.instance.maxHealth += Wonje_ShopManager.instance.increaseHealth;
+                    Wonje_DataManager.instance.maxHealth += Wonje_ShopManager.instance.increaseHealth;                     
                 }
                 break;
             case InfoType.Damage:
@@ -43,7 +41,7 @@ public class Wonje_ShopUpgrade: MonoBehaviour
                     Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costDamage;
                     Wonje_DataManager.instance.curDamage += Wonje_ShopManager.instance.increaseDamage;
                 }
-                break;
+                break;   
         }
     }
 }
