@@ -48,7 +48,7 @@ public class ObstacleSpawn : MonoBehaviour
     {
         while (true)
         {
-            randomValue = Random.Range(6, 7); // 패턴 랜덤 선택
+            randomValue = Random.Range(1, 7); // 패턴 랜덤 선택
 
             if (randomValue == 1) // 패턴(1)
             {
@@ -104,7 +104,7 @@ public class ObstacleSpawn : MonoBehaviour
                 Instantiate(Gear, GearPosition4, Quaternion.identity);
                 yield return new WaitForSeconds(2f);
 
-                GameObject entryObstacle = Instantiate(entryObstacle, EntryPosition, Quaternion.identity);
+                Instantiate(entryObstacle, EntryPosition, Quaternion.identity);
                 yield return new WaitForSeconds(obstacleInterval + 1f);
             }
         }

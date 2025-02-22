@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6249819031004627072}
   - component: {fileID: -6894592688946212967}
   - component: {fileID: -4972433081331798473}
+  - component: {fileID: -1161506079368341262}
   m_Layer: 0
   m_Name: ClosedEntry
   m_TagString: Obstacle
@@ -143,3 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a98373127e5ac4db3959913a2d0cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1161506079368341262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845871433434739422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd24d44931f248f499a5986a06cbed77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entryAnimation: {fileID: 1534741793378879212, guid: ea034b2256d64c24faef1f4ba03f033f, type: 3}

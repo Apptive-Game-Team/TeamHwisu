@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5603740264050720538}
   - component: {fileID: 8794713494696185048}
   - component: {fileID: 6231190807841945084}
+  - component: {fileID: -8772753319546065323}
+  - component: {fileID: -685193388916675473}
   m_Layer: 0
   m_Name: EntryAnimation
   m_TagString: Untagged
@@ -106,3 +108,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8772753319546065323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534741793378879212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a98373127e5ac4db3959913a2d0cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-685193388916675473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534741793378879212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50df0a08db2045c428b96a159b58ec2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

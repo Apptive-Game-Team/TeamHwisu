@@ -1224,7 +1224,7 @@ MonoBehaviour:
   largeFallingObstacle: {fileID: 4770226276043927837, guid: 1722c26660a5a654b97c99dc54b360bd, type: 3}
   crawlingObstacle: {fileID: 8275917130254841636, guid: 6105e1579373ba546a3b1dd9821ed0ce, type: 3}
   Gear: {fileID: 3369198375579396835, guid: 8aa5e4cbdb53a5d41b2508041d4a6115, type: 3}
-  EntryObstacle: {fileID: 2845871433434739422, guid: c77a65dcc3e126344bd61da47656f38e, type: 3}
+  entryObstacle: {fileID: 2845871433434739422, guid: c77a65dcc3e126344bd61da47656f38e, type: 3}
 --- !u!1 &842423277
 GameObject:
   m_ObjectHideFlags: 0
