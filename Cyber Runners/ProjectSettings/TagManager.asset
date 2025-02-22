@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Gear
+  - Weapon
   layers:
   - Default
   - TransparentFX
