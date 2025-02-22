@@ -14,6 +14,7 @@ public class HealthManager : MonoBehaviour
 
     void Start()
     {
+        maxHealth += Wonje_DataManager.instance.maxHealth;
         currentHealth = maxHealth;
         healthBar.minValue = 0f;
         healthBar.maxValue = 1f;

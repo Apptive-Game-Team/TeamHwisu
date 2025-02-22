@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 {
     [Header("References")]
     public Player player;
-    public HealthManager healthManager;
     public ScoreManager scoreManager;
     public BackgroundScroll backgroundScroll;
     public BackgroundScroll groundScroll;
@@ -35,12 +34,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("게임 종료 처리를 진행합니다.");
         State = GameState.Dead;
-        player.GameOver();
         backgroundScroll.scrollSpeed = 0;
         groundScroll.scrollSpeed = 0;
-        healthManager.enabled = false;
-        scoreManager.enabled = false;
+        scoreManager.gameObject.SetActive(false);
     }
 }
