@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Weapon 3
   m_EditorClassIdentifier: 
   weaponName: "\uBB34\uAE304"
-  weaponPrice: 40
+  weaponPrice: 200
   weaponIcon: {fileID: -1367336437, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
-  weaponDamage: 12
-  weaponCool: 9
+  weaponDamage: 10
+  weaponCool: 6
+  weaponAnim: {fileID: 0}
+  weaponDesc: 
   weaponSpeed: 10
-  weaponPrefab: {fileID: 3490505520603772441, guid: 538c5a5b8aa93734c9baa332fa05a9b0, type: 3}
+  weaponPrefab: {fileID: 6796788402136613408, guid: d6604783fda61294591a4afc6a46a000, type: 3}

@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: Weapon 0
   m_EditorClassIdentifier: 
   weaponName: "\uD560\uD034\uAE30"
-  weaponPrice: 10
-  weaponIcon: {fileID: -2113447602, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
+  weaponPrice: 100
+  weaponIcon: {fileID: -893626103, guid: 1b1318df99f40be4d8ca47f36433d485, type: 3}
   weaponDamage: 5
   weaponCool: 3
+  weaponAnim: {fileID: 0}
+  weaponDesc: "\uC791\uC740 \uBC14\uB78C\uAC1C\uBE44\uB97C 1\uAC1C \uC0DD\uC131\uD558\uC5EC
+    \uBCF4\uC2A4\uC5D0\uAC8C \uB370\uBBF8\uC9C0\uB97C \uC900\uB2E4. \uCD5C\uACE0
+    \uB808\uBCA8\uC5D0 \uB3C4\uB2EC\uD560 \uC2DC \uBC14\uB78C\uAC1C\uBE44 1\uAC1C
+    \uB2F9 50\uC758 \uB370\uBBF8\uC9C0\uB97C \uAC00\uC9C4\uB2E4."
   weaponSpeed: 15
-  weaponPrefab: {fileID: 6737084022731858832, guid: 3a01078a5e95a4144829c07c15945f08, type: 3}
+  weaponPrefab: {fileID: 7550441629342288268, guid: c2efe38fc0436324c840a8f0e1983774, type: 3}

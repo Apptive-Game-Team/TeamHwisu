@@ -13,13 +13,13 @@ public class Dohyeong_WeaponData : ScriptableObject
     public Sprite weaponIcon;
     public float weaponDamage;
     public float weaponCool;
-    public string animationTrigger;
+    public AnimationClip weaponAnim; // 상점 상 애니메이션
+    [TextArea(2, 3)]
+    public string weaponDesc; // 상점 상 무기 설명
     
     [Header("# 추후 결정")]
 
     public float weaponSpeed;
-    public string weaponDesc; // 상점에 띄울 무기 설명
-    
     public GameObject weaponPrefab;
     
     

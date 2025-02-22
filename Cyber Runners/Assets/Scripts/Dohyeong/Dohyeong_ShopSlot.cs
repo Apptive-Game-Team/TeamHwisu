@@ -39,7 +39,6 @@ public class Dohyeong_ShopSlot : MonoBehaviour
         weaponPrice.text = weaponData.weaponPrice.ToString();
         weaponDamage.text = $"데미지: {weaponData.weaponDamage}"; 
         weaponCool.text = $"쿨타임: {weaponData.weaponCool}초"; 
-        weaponAnim.SetTrigger(weaponData.animationTrigger);
 
         // 클릭 시 Info UI 업데이트 버튼 이벤트트 -> 인스펙터로
     }
