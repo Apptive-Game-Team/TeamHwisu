@@ -12,6 +12,12 @@ public enum GameState {
 
 public class GameManager : MonoBehaviour
 {
+    [Header("References")]
+    public Player player;
+    public HealthManager healthManager;
+    public ScoreManager scoreManager;
+    public BackgroundScroll backgroundScroll;
+    public BackgroundScroll groundScroll;
     public static GameManager Instance;
     public GameState State = GameState.Intro;
 
@@ -29,7 +35,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        State = GameState.Dead;
         Debug.Log("게임 종료 처리를 진행합니다.");
+        State = GameState.Dead;
+        player.GameOver();
+        backgroundScroll.scrollSpeed = 0;
+        groundScroll.scrollSpeed = 0;
+        healthManager.enabled = false;
+        scoreManager.enabled = false;
     }
 }

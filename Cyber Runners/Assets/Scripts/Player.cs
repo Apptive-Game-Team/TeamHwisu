@@ -70,4 +70,8 @@ public class Player : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
     }
+
+    public void GameOver() {
+        playerAnimator.SetBool("isDead", true);
+    }
 }
