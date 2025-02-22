@@ -8,14 +8,17 @@ public class Player : MonoBehaviour
     public float jumpForce;
 
     private int jumpCount = 0;
+    private Vector3 offScreenPosition;
+    public Vector3 onScreenPosition;
+    public float moveDuration = 1.5f;
 
     [Header("References")]
     public Rigidbody2D playerRigidBody;
     public Animator playerAnimator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        
+        offScreenPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -46,6 +49,25 @@ public class Player : MonoBehaviour
         {
             playerAnimator.SetInteger("state", 0);
             jumpCount = 0;
+        }
+    }
+
+    public void GameStart()
+    {
+        StartCoroutine(MoveToOnScreen());
+    }
+
+    IEnumerator MoveToOnScreen()
+    {
+        float elapsedTime = 0f;
+        Vector3 targetPos = new Vector3(onScreenPosition.x, offScreenPosition.y, onScreenPosition.z);
+
+        while (elapsedTime < moveDuration)
+        {
+            Vector3 newPos = Vector3.Lerp(offScreenPosition, targetPos, elapsedTime / moveDuration);
+            playerRigidBody.MovePosition(newPos);
+            elapsedTime += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
     }
 }

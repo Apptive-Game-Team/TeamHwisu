@@ -101,7 +101,7 @@ public class Wonje_ShopHud : MonoBehaviour
         if (loadSceneAfter)
         {
             Wonje_ShopManager.instance.ResetParty();
-            SceneManager.LoadScene("Test_Main_Wonje");
+            SceneManager.LoadScene("Main_Hwisu");
         }
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum GameState {
     Intro,
@@ -11,7 +13,6 @@ public enum GameState {
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public GameState State = GameState.Intro;
 
     void Awake()
@@ -20,14 +21,15 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-    void Start()
+
+    public void ToShop()
     {
-        
+        SceneManager.LoadScene("Shop_Hwisu");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
-        
+        State = GameState.Dead;
+        Debug.Log("게임 종료 처리를 진행합니다.");
     }
 }
