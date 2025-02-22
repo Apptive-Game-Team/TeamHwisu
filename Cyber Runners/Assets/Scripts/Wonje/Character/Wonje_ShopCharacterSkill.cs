@@ -12,15 +12,15 @@ public class Wonje_ShopCharacterSkill : MonoBehaviour
 
     private string[] skillDescriptions  = // 스킬 설명
     {
-        "바위처럼 단단하게.",   // 캐릭터 0번
-        "",   // 캐릭터 1번
+        "보호막을 부여합니다",   // 캐릭터 0번
+        "장애물 속도이 오는 속도가 늦어집니다",   // 캐릭터 1번
         "", // 캐릭터 2번
     };
 
     private string[] skillInfo = // 스킬 정보
     {
-        "피해감소",  // 캐릭터 0번
-        "",  // 캐릭터 1번
+        "보호막 수치",  // 캐릭터 0번
+        "속도 감소",  // 캐릭터 1번
         ""  // 캐릭터 2번
     };
 
@@ -52,14 +52,14 @@ public class Wonje_ShopCharacterSkill : MonoBehaviour
                 myText.text = skillDescriptions[characterNum];
                 break;
             case InfoType.curLevelData:
-                myText.text = string.Format("{0:F0} + {1:F0}", skillInfo[characterNum], increaseSkillEffect[characterNum] * characterUpgradeStatus[characterNum]);
+                myText.text = string.Format("{0:F0} + <color=#00FF00>{1:F0}</color>", skillInfo[characterNum], increaseSkillEffect[characterNum] * characterUpgradeStatus[characterNum]);
                 break;
             case InfoType.nextLevelData:
                 if (characterUpgradeStatus[characterNum] == maxSkillLevel) {
-                    myText.text = string.Format("최대레벨입니다");
+                    myText.text = "<color=#FF0000>최대레벨입니다</color>";
                 }
                 else {
-                    myText.text = string.Format("{0:F0} + {1:F0}", skillInfo[characterNum], increaseSkillEffect[characterNum] * (characterUpgradeStatus[characterNum] + 1));
+                    myText.text = string.Format("{0:F0} + <color=#00FF00>{1:F0}</color>", skillInfo[characterNum], increaseSkillEffect[characterNum] * (characterUpgradeStatus[characterNum] + 1));
                 }
                 break;
         }

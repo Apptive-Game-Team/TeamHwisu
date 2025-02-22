@@ -10,7 +10,7 @@ public class Wonje_ShopManager : MonoBehaviour
 
     public int maxSkillLevel = 25; // 최대 스킬 업그레이드 레벨
     public int costSkill = 100; // 스킬 업그레이드 비용
-    public int[] increaseSkillEffect = { 2, 0, 0 }; // 캐릭터별 레벨에 따른 스킬 효과 증가량 
+    public int[] increaseSkillEffect = { 10, 2, 0 }; // 캐릭터별 레벨에 따른 스킬 효과 증가량 
     public int increaseHealth = 10; // 체력 증가량
     public int costHealth = 100; // 체력 업그레이드 비용
     public int increaseDamage = 10; // 데미지 증가량

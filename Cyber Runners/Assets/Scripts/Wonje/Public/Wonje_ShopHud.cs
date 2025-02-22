@@ -11,7 +11,7 @@ public class Wonje_ShopHud : MonoBehaviour
     private RectTransform rectTransform;
     private Vector2 showPosition; // 보이는 위치
     private Vector2 hidePosition; // 숨겨진 위치
-    private float duration = 0.2f; // 애니메이션 지속 시간
+    private float duration; // 애니메이션 지속 시간
     private Coroutine moveCoroutine;
     
 
@@ -42,7 +42,8 @@ public class Wonje_ShopHud : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        switch (type) {
+        switch (type)
+        {
             case InfoType.Menu:
             case InfoType.Character:
             case InfoType.Coin:
@@ -82,6 +83,8 @@ public class Wonje_ShopHud : MonoBehaviour
     {
         Vector2 start = rectTransform.anchoredPosition;
         float elapsedTime = 0f;
+        duration = loadSceneAfter ? 0.3f : 0.2f;
+
 
         while (elapsedTime < duration)
         {
