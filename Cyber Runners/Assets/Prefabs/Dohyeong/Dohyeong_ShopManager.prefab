@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8158815709014950400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4620240721981432559}
+  - component: {fileID: 2019175757752609445}
+  - component: {fileID: 6981231852540604296}
+  m_Layer: 0
+  m_Name: Dohyeong_ShopManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4620240721981432559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158815709014950400}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 920, y: 369.69592, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2019175757752609445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158815709014950400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 479c048e7a231104f9510fa2696a5878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPrefab: {fileID: 4279818837492823724, guid: 8bac10722d59f014fae3c14065c9531f, type: 3}
+  slotContainer: {fileID: 0}
+  prevButton: {fileID: 0}
+  nextButton: {fileID: 0}
+  weaponInfo: {fileID: 0}
+  allWeapons:
+  - {fileID: 11400000, guid: e3e3bccbf3483234e8869b675631cf7f, type: 2}
+  - {fileID: 11400000, guid: d1f61e995564e224faca7be3e20133b0, type: 2}
+  - {fileID: 11400000, guid: aa2eddfaacb1a7542aad3fb221d00ad8, type: 2}
+  - {fileID: 11400000, guid: b6ec2881b62cf734584bf233f31a2897, type: 2}
+  - {fileID: 11400000, guid: 587d0546d1db8034d89f256c327b9dde, type: 2}
+  - {fileID: 11400000, guid: af09c4b96c57cfc49af27518506fc6d2, type: 2}
+--- !u!114 &6981231852540604296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158815709014950400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d88b895a8bd2b74eb74e7f6f1432905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dia: 100

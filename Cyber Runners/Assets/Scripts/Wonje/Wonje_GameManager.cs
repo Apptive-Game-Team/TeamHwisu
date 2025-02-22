@@ -15,6 +15,6 @@ public class Wonje_GameManager : MonoBehaviour
 
     public void ToShop()
     {
-        SceneManager.LoadScene("Wonje_Shop");
+        SceneManager.LoadScene("Shop_Hwisu");
     }
 }
