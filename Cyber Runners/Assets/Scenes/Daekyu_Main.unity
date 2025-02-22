@@ -1222,7 +1222,9 @@ MonoBehaviour:
   largeObstacle: {fileID: 7609271977227823352, guid: b123b8475927e5940afc5c0bf9fbb797, type: 3}
   bossAttack: {fileID: 6775291996485196165, guid: 460faf0c33b7862419691e3d141703ae, type: 3}
   largeFallingObstacle: {fileID: 4770226276043927837, guid: 1722c26660a5a654b97c99dc54b360bd, type: 3}
-  crawlingObstacle: {fileID: 6390010883059318706, guid: 6105e1579373ba546a3b1dd9821ed0ce, type: 3}
+  crawlingObstacle: {fileID: 8275917130254841636, guid: 6105e1579373ba546a3b1dd9821ed0ce, type: 3}
+  Gear: {fileID: 3369198375579396835, guid: 8aa5e4cbdb53a5d41b2508041d4a6115, type: 3}
+  EntryObstacle: {fileID: 2845871433434739422, guid: c77a65dcc3e126344bd61da47656f38e, type: 3}
 --- !u!1 &842423277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd600d8846dcd248ab34a188498bfb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gearCount: 0
 --- !u!1 &1773016371
 GameObject:
   m_ObjectHideFlags: 0

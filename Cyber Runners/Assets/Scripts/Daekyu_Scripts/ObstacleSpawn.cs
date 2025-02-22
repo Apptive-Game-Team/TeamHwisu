@@ -9,6 +9,8 @@ public class ObstacleSpawn : MonoBehaviour
     [SerializeField] GameObject bossAttack;
     [SerializeField] GameObject largeFallingObstacle;
     [SerializeField] GameObject crawlingObstacle;
+    [SerializeField] GameObject Gear;
+    [SerializeField] GameObject entryObstacle;
 
     Vector3 smallPosition1 = new Vector3(10f, -2.27f, 0);
     Vector3 smallPosition2 = new Vector3(15f, -2.27f, 0);
@@ -25,10 +27,17 @@ public class ObstacleSpawn : MonoBehaviour
     Vector3 largeFallingPosition2 = new Vector3(14.7f, 1.2f, 0);
     Vector3 largeFallingPosition3 = new Vector3(19.7f, 1.2f, 0);
 
-    Vector3 crawlingPosition = new Vector3(11.67f, -2.2f, 0);
+    Vector3 crawlingPosition = new Vector3(14f, 0.9f, 0);
+
+    Vector3 GearPosition1 = new Vector3(10f, -2f, 0);
+    Vector3 GearPosition2 = new Vector3(10f, 0f, 0);
+    Vector3 GearPosition3 = new Vector3(10f, 1.5f, 0);
+    Vector3 GearPosition4 = new Vector3(10f, 0.6f, 0);
+
+    Vector3 EntryPosition = new Vector3(12f, 0.9f, 0);
 
     int randomValue;
-    private float obstacleInterval = 2f; // 패턴 발동 간격
+    private float obstacleInterval = 2.5f; // 패턴 발동 간격
 
     private void Start()
     {
@@ -39,7 +48,7 @@ public class ObstacleSpawn : MonoBehaviour
     {
         while (true)
         {
-            randomValue = Random.Range(1, 6); // 패턴 랜덤 선택
+            randomValue = Random.Range(6, 7); // 패턴 랜덤 선택
 
             if (randomValue == 1) // 패턴(1)
             {
@@ -70,11 +79,33 @@ public class ObstacleSpawn : MonoBehaviour
                 yield return new WaitForSeconds(obstacleInterval);
             }
 
-            else if (randomValue == 5) //패턴(5)
+            else if (randomValue == 5) // 패턴(5)
             {
                 yield return new WaitForSeconds(1f);
                 Instantiate(crawlingObstacle, crawlingPosition, Quaternion.identity);
                 yield return new WaitForSeconds(obstacleInterval);
+            }
+
+            else if (randomValue == 6) // 패턴(6)
+            {
+                Instantiate(Gear, GearPosition1, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+
+                Instantiate(Gear, GearPosition3, Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+
+                Instantiate(Gear, GearPosition2, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+
+                Instantiate(Gear, GearPosition3, Quaternion.identity);
+                yield return new WaitForSeconds(1f);
+
+                Instantiate(Gear, GearPosition1, Quaternion.identity);
+                Instantiate(Gear, GearPosition4, Quaternion.identity);
+                yield return new WaitForSeconds(2f);
+
+                GameObject entryObstacle = Instantiate(entryObstacle, EntryPosition, Quaternion.identity);
+                yield return new WaitForSeconds(obstacleInterval + 1f);
             }
         }
     }
