@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Wonje_ShopAbility : MonoBehaviour
 {
-    public enum InfoType { curCoin, maxHealth, curDamage }
+    public enum InfoType { curCoin, maxHealth, curDamage, curDefense }
     public InfoType type;
 
     private Text myText;
@@ -33,6 +33,8 @@ public class Wonje_ShopAbility : MonoBehaviour
                 return lastValue != Wonje_DataManager.instance.maxHealth;
             case InfoType.curDamage:
                 return lastValue != Wonje_DataManager.instance.curDamage;
+            case InfoType.curDefense:
+                return lastValue != Wonje_DataManager.instance.curDefense;    
         }
         return false;
     }
@@ -53,6 +55,10 @@ public class Wonje_ShopAbility : MonoBehaviour
                 lastValue = Wonje_DataManager.instance.curDamage;
                 myText.text = string.Format("{0:F0}", lastValue);
                 break;
+            case InfoType.curDefense:
+                lastValue = Wonje_DataManager.instance.curDefense;
+                myText.text = string.Format("{0:F0}", lastValue);
+                break;    
         }
     }
 }

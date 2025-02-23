@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Wonje_ShopAbilityUpgrade : MonoBehaviour
 {
-    public enum InfoType {Health, Damage}
+    public enum InfoType {Health, Damage, Defense}
     public InfoType type;
 
     Text myText;
@@ -23,7 +23,10 @@ public class Wonje_ShopAbilityUpgrade : MonoBehaviour
                 break;  
             case InfoType.Damage:
                 myText.text = string.Format("Damage + {0:F0}", Wonje_ShopManager.instance.increaseDamage);
-                break;           
+                break;
+            case InfoType.Defense:
+                myText.text = string.Format("Defense + {0:F0}", Wonje_ShopManager.instance.increaseDamage);
+                break;               
         }
     }
 
@@ -41,7 +44,13 @@ public class Wonje_ShopAbilityUpgrade : MonoBehaviour
                     Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costDamage;
                     Wonje_DataManager.instance.curDamage += Wonje_ShopManager.instance.increaseDamage;
                 }
-                break;   
+                break;
+            case InfoType.Defense:
+                if (Wonje_DataManager.instance.curCoin >= Wonje_ShopManager.instance.costDefense) {
+                    Wonje_DataManager.instance.curCoin -= Wonje_ShopManager.instance.costDefense;
+                    Wonje_DataManager.instance.curDefense += Wonje_ShopManager.instance.increaseDefense;
+                }
+                break;       
         }
     }
 }

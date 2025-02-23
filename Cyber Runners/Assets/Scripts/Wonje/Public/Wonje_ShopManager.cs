@@ -15,6 +15,8 @@ public class Wonje_ShopManager : MonoBehaviour
     public int costHealth = 100; // 체력 업그레이드 비용
     public int increaseDamage = 10; // 데미지 증가량
     public int costDamage = 100; // 데미지 업그레이드 비용
+    public int increaseDefense = 10; // 방어력 증가량
+    public int costDefense = 100; // 방어력 업그레이드 비용
     public int characterNum = 0; // 보여지는 캐릭터의 넘버
     
     int[] ResetPartyNum = new int[2] {0, 1}; // 파티의 캐릭터를 초기화

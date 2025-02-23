@@ -52,6 +52,18 @@ public class Wonje_ShopHud : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        switch (type)
+        {
+            case InfoType.Menu:
+            case InfoType.Character:
+            case InfoType.Coin:
+                ShowUI();
+                break;
+        }
+    }
+
     public void ShowUI()
     {
         if (moveCoroutine != null)
