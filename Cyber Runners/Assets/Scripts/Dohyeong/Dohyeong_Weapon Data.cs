@@ -13,6 +13,7 @@ public class Dohyeong_WeaponData : ScriptableObject
     public Sprite weaponIcon;
     public float weaponDamage;
     public float weaponCool;
+    public string animationTrigger;
     
     [Header("# 추후 결정")]
 
@@ -21,7 +22,6 @@ public class Dohyeong_WeaponData : ScriptableObject
     
     public GameObject weaponPrefab;
     
-    // public string animationName;
     
 
 }
