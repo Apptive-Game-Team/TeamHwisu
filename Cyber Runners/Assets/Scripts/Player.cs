@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D playerRigidBody;
     public Animator playerAnimator;
+    public BoxCollider2D playerCollider;
     public List<RuntimeAnimatorController> changedController;
 
     void Start()
@@ -48,9 +51,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && jumpCount < 2)
+        if(Input.GetKeyDown(KeyCode.Space) && jumpCount < 2 && GameManager.Instance.State != GameState.Dead)
         {
             Jump(Vector2.up);
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && GameManager.Instance.State != GameState.Dead)
+        {
+            Change();
         }
     }
 
@@ -87,6 +95,14 @@ public class Player : MonoBehaviour
                 Jump(jumpVector);
                 decreaseAmount = 5f;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Obstacle")) 
+        {
+            currentHealth -= 5f;
         }
     }
 
