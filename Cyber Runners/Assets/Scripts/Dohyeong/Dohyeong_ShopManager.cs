@@ -22,19 +22,12 @@ public class Dohyeong_ShopManager : MonoBehaviour
 
     void Start()
     {
-
-    if (slotPrefab == null)
-        Debug.LogError("🚨 slotPrefab이 null입니다! Inspector에서 확인하세요!");
-
-    if (slotContainer == null)
-        Debug.LogError("🚨 slotContainer가 null입니다! Inspector에서 확인하세요!");
-
         UpdatePage();
     }
 
     void UpdatePage()
     {
-        // 로드 전 초기화화
+        // 로드 전 초기화
         ClearSlots();
 
         prevButton.interactable = curPage > 0;

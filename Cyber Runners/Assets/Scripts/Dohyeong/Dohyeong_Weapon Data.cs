@@ -17,7 +17,8 @@ public class Dohyeong_WeaponData : ScriptableObject
     [TextArea(2, 3)]
     public string weaponDesc; // 상점 상 무기 설명
     
-    [Header("# 추후 결정")]
+    [Header("# 무기 스폰 정보")]
+    public int weaponType; // 발사 방식 구분
 
     public float weaponSpeed;
     public GameObject weaponPrefab;
