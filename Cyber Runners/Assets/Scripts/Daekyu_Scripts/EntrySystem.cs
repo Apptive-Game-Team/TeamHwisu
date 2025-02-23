@@ -18,7 +18,7 @@ public class EntrySystem : MonoBehaviour
         {
             yield return new WaitForSeconds(1.3f);
             PlayerCollision playerCollision = GameObject.Find("Player").GetComponent<PlayerCollision>();
-            if (playerCollision.gearCount == 6)
+            if (playerCollision.gearCount >= 5)
             {
                 Instantiate(entryAnimation, transform.position, Quaternion.identity);
                 Destroy(gameObject);

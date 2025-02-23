@@ -37,7 +37,7 @@ public class ObstacleSpawn : MonoBehaviour
     Vector3 EntryPosition = new Vector3(12f, 0.9f, 0);
 
     int randomValue;
-    private float obstacleInterval = 2.5f; // ÆÐÅÏ ¹ßµ¿ °£°Ý
+    private float obstacleInterval = 2.5f; // ï¿½ï¿½ï¿½ï¿½ ï¿½ßµï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private void Start()
     {
@@ -48,9 +48,9 @@ public class ObstacleSpawn : MonoBehaviour
     {
         while (true)
         {
-            randomValue = Random.Range(1, 7); // ÆÐÅÏ ·£´ý ¼±ÅÃ
+            randomValue = Random.Range(1, 7); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            if (randomValue == 1) // ÆÐÅÏ(1)
+            if (randomValue == 1) // ï¿½ï¿½ï¿½ï¿½(1)
             {
                 Instantiate(smallObstacle, smallPosition1, Quaternion.identity);
                 Instantiate(smallObstacle, smallPosition2, Quaternion.identity);
@@ -58,7 +58,7 @@ public class ObstacleSpawn : MonoBehaviour
                 yield return new WaitForSeconds(obstacleInterval);
             }
 
-            else if (randomValue == 2) // ÆÐÅÏ(2)
+            else if (randomValue == 2) // ï¿½ï¿½ï¿½ï¿½(2)
             {
                 Instantiate(largeObstacle, largePosition1, Quaternion.identity);
                 Instantiate(smallObstacle, smallPosition2, Quaternion.identity);
@@ -66,12 +66,12 @@ public class ObstacleSpawn : MonoBehaviour
                 yield return new WaitForSeconds(obstacleInterval);
             }
 
-            else if (randomValue == 3) // ÆÐÅÏ(3)
+            else if (randomValue == 3) // ï¿½ï¿½ï¿½ï¿½(3)
             {
                 yield return StartCoroutine(SpawnBossAttack());
             }
 
-            else if (randomValue == 4) // ÆÐÅÏ(4)
+            else if (randomValue == 4) // ï¿½ï¿½ï¿½ï¿½(4)
             {
                 Instantiate(largeObstacle, largePosition1, Quaternion.identity);
                 Instantiate(largeFallingObstacle, largeFallingPosition2, Quaternion.identity);
@@ -79,14 +79,14 @@ public class ObstacleSpawn : MonoBehaviour
                 yield return new WaitForSeconds(obstacleInterval);
             }
 
-            else if (randomValue == 5) // ÆÐÅÏ(5)
+            else if (randomValue == 5) // ï¿½ï¿½ï¿½ï¿½(5)
             {
                 yield return new WaitForSeconds(1f);
                 Instantiate(crawlingObstacle, crawlingPosition, Quaternion.identity);
                 yield return new WaitForSeconds(obstacleInterval);
             }
 
-            else if (randomValue == 6) // ÆÐÅÏ(6)
+            else if (randomValue == 6) // ï¿½ï¿½ï¿½ï¿½(6)
             {
                 Instantiate(Gear, GearPosition1, Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
