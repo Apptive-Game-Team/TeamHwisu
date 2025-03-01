@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponSpawner : MonoBehaviour
 {
-    public WeaponData[] weapons;
+    public Dohyeong_WeaponData[] weapons;
     public Transform spawnPoint;
 
     public void UseWeapon(int weaponNum)

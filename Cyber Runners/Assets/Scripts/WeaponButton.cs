@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class WeaponButton : MonoBehaviour
 {
-    public WeaponData weapon;
+    public Dohyeong_WeaponData data;
     public Player player;
     public Image imgIcon;
     public Image imgCool;
 
     void Start()
     {
-        imgIcon.sprite = weapon.icon;
+        imgIcon.sprite = data.weaponIcon;
 
         imgCool.fillAmount = 0;
     }
@@ -34,10 +34,10 @@ public class WeaponButton : MonoBehaviour
         imgCool.fillAmount = 1;
         float curTime = 0f;
 
-        while (curTime < weapon.cool)
+        while (curTime < data.weaponCool)
         {
             curTime += Time.deltaTime;
-            imgCool.fillAmount = Mathf.Clamp01(1 - curTime / weapon.cool);
+            imgCool.fillAmount = Mathf.Clamp01(1 - curTime / data.weaponCool);
             yield return null;
         }
         imgCool.fillAmount = 0;
